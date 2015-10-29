@@ -3,10 +3,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Lost</title>
+  <link rel="stylesheet" href="static/FontAwesome/css/font-awesome.css" type="text/css">
+  <link rel="stylesheet" href="font/DigiFont/WebFonts/stylesheet.css" type="text/css">
+  <link rel="stylesheet" href="static/style.css" type='text/css'>
 </head>
 <body>
-  
+  <button id="resetHit">Lost!</button>
+  <p id="digitalTime"></p>
+  <audio id="audiotag" src="static/cambeep.mp3" preload="auto"></audio>
+  <img class='fail' src="http://media.giphy.com/media/HhTXt43pk1I1W/giphy.gif" alt="boom">
+  <img class='almostFail' src="http://media.giphy.com/media/Bq7yz8gBShy5a/giphy.gif" alt="run">
+  <img class="start" src="http://media.giphy.com/media/TGl1CvYAL2eVq/giphy.gif" alt="Lost"/>
+  <p id="at25">WERE ALMOST OUT OF TIME!</p>
+  <p id="at20">THE CLOCK IS TICKING!</p>
+  <p id="at15">HEY MAN!!!</p>
+  <p id="at10">YOUR ON YOUR OWN!</p>
+  <p id="at5">RUN!</p>
+  <button id="abort" class="fa fa-close"></button>
+
+  <script src='static/Lost.js'></script>
 </body>
 </html>
 {{end}}
