@@ -3,10 +3,15 @@ package main
 import (
 	"fmt"
 	"math"
+	"math/rand"
+	"reflect"
 	"strconv"
 )
 
 func main() {
+	var something = rand.Seed(42)
+	fmt.Println(something)
+
 	var x int = 4
 	var y float64 = 10.222
 	fmt.Println(y + float64(x))
@@ -27,6 +32,8 @@ func main() {
 	}
 
 	var num float64
+	fmt.Printf("%T", num)
+	fmt.Println(reflect.TypeOf(num))
 	fmt.Println("give me a number to round up: ")
 	fmt.Scanln(&num)
 	fmt.Println("rounded number: ", math.Ceil(num))
