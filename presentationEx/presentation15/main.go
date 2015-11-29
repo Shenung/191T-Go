@@ -49,11 +49,57 @@ func main() {
 
 	//create a program that:
 	// creates a map using shorthand notation
+	var someMap = map[int]string{
+		0: "Hello",
+		1: "World!",
+	}
+
 	// adds an entry to the map
+	someMap[2] = "I'm New"
+
 	// changes an entry in the map
+	someMap[2] = "So am I"
+
 	// deletes an entry in the map
+	delete(someMap, 2)
+
 	// prints all of the entries in the map using range
+	for key, val := range someMap {
+		fmt.Println(key, " - ", val)
+	}
+
 	// prints the len of the map
+	fmt.Println(len(someMap))
+
 	// uses the comma ok idiom
+	if val, exists := someMap[3]; exists {
+		fmt.Println("val->", val)
+		fmt.Println(exists)
+	} else {
+		fmt.Println("val->", val)
+		fmt.Println(exists)
+	}
+	// create a program that:
+	// declares a variable of type int using new
+	// (note: this is not idiomatic go code to create an int this way)
+	var someNewVar = new(int)
+	// print out the memory address of the variable
+	fmt.Println(someNewVar)
+	// print out the value of the variable
+	fmt.Println(*someNewVar)
+	// true or false:
+	// 	new returned a pointer
+	// Ans-->TRUE
+
+	// 	create a program that:
+	// declares a variable of type string using new
+	// (note: this is not idiomatic go code to create a string this way)
+
+	// print out the memory address of the variable
+
+	// print out the value of the variable
+
+	// true or false:
+	// new returned a pointer
 
 }
