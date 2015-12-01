@@ -44,8 +44,8 @@ func main() {
 	}
 	fmt.Println()
 	//create a slice then make your program throw an “index out of range” error
-	var errorSlice = []int{1, 2, 3, 4}
-	fmt.Println(errorSlice[5])
+	//var errorSlice = []int{1, 2, 3, 4}
+	//fmt.Println(errorSlice[5])
 
 	//create a program that:
 	// creates a map using shorthand notation
@@ -94,12 +94,48 @@ func main() {
 	// 	create a program that:
 	// declares a variable of type string using new
 	// (note: this is not idiomatic go code to create a string this way)
-
+	var someNewString = new(string)
 	// print out the memory address of the variable
-
+	fmt.Println(someNewString)
 	// print out the value of the variable
-
+	fmt.Println(*someNewString)
 	// true or false:
 	// new returned a pointer
+	// Ans-->TRUE
+
+	// create a program that:
+	// declares a variable of type bool using new
+	// (note: this is not idiomatic go code to create a bool this way)
+	var someNewCondChk = new(bool)
+	// print out the memory address of the variable
+	fmt.Println(someNewCondChk)
+	// print out the value of the variable
+	fmt.Println(*someNewCondChk)
+	// true or false:
+	// new returned a pointer
+	//Ans-->TRUE
+
+	// create a program that:
+	// declares a variable of type[]int using make
+	var newInt = make([]int, 10)
+	// print out the value of the variable
+	for _, val := range newInt {
+		fmt.Print(val, " ")
+	}
+	fmt.Println()
+	// true or false:
+	// make returned a pointer
+	//Ans-->false
+
+	// create a program that:
+	// declares a variable of type map[int]string using make
+	var newMap = make(map[int]string)
+	// print out the value of the variable
+	fmt.Println(newMap)
+	fmt.Println(newMap[0])
+	fmt.Println(newMap[9999])
+	// true or false:
+	// make returned a pointer
+	//Ans-->false
 
 }
