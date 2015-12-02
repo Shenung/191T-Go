@@ -157,15 +157,21 @@ func main() {
 		age  int
 	}
 	// initialize two variables using that struct type
+	someGuysInfo := customer{"Nobody Here", 20}
 
 	// uses dot-notation to print a field from each of the variables
+	fmt.Println(someGuysInfo.name)
+	fmt.Println(someGuysInfo.age)
 
 	// changes the value of one of the fields
+	someGuysInfo.age = 23
 
 	// prints the changed field
+	fmt.Println(someGuysInfo.age)
 
 	// Can you use new to create a variable of a struct type?
+	//	yes
 
 	// Can you use make to create a variable of a struct type?
-
+	//	no because make is for maps, slices, and channels
 }
