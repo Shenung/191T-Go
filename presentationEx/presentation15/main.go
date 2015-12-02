@@ -138,4 +138,34 @@ func main() {
 	// make returned a pointer
 	//Ans-->false
 
+	// What are the zeroed values for int, string, bool?
+	//	int -> 0
+	//	string -> <empty string>
+	//  bool -> false
+
+	// What are the zeroed values for slice and map
+	//	slice -> 0
+	//	map -> 0
+
+	// Explain the difference between make and new
+	// 	new returns a pointer thats newly allocated where as make does not
+
+	// create a program that:
+	// defines a struct type to hold customer info
+	type customer struct {
+		name string
+		age  int
+	}
+	// initialize two variables using that struct type
+
+	// uses dot-notation to print a field from each of the variables
+
+	// changes the value of one of the fields
+
+	// prints the changed field
+
+	// Can you use new to create a variable of a struct type?
+
+	// Can you use make to create a variable of a struct type?
+
 }
