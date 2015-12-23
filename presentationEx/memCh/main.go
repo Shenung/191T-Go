@@ -59,7 +59,7 @@ func handleTodos(res http.ResponseWriter, req *http.Request) {
 			return
 		}
 	case "POST":
-		// the user is posting a new item
+
 		var todo ToDo
 		err := json.NewDecoder(req.Body).Decode(&todo)
 		if err != nil {
@@ -68,7 +68,7 @@ func handleTodos(res http.ResponseWriter, req *http.Request) {
 			return
 		}
 		todo.Email = u.Email
-		// add to datastore
+
 		key := datastore.NewIncompleteKey(ctx, "ToDo", nil)
 		key, err = datastore.Put(ctx, key, &todo)
 		if err != nil {
@@ -77,7 +77,7 @@ func handleTodos(res http.ResponseWriter, req *http.Request) {
 			return
 		}
 		todo.ID = key.IntID()
-		// send back to user
+
 		err = json.NewEncoder(res).Encode(todo)
 		if err != nil {
 			log.Errorf(ctx, "error marshalling todo: %v", err)
