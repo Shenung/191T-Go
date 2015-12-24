@@ -17,15 +17,16 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            /*border: 1px solid black;*/
             margin: 10px;
+        }
+        body {
+          background-color: #f3ddc6;
         }
         article {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            /*border: 1px solid black;*/
             min-width: 600px;
         }
         section {
@@ -42,7 +43,7 @@
         h1 {
             font-family: 'Merienda', cursive;
             font-size: 53px;
-            color: #2ec371;
+            color: white;
             margin: 10px;
         }
         h2 {
@@ -64,6 +65,10 @@
         .fa-plus-circle {
             color: green;
         }
+        .glyphicon-move {
+          cursor: move;
+          cursor: -webkit-grabbing;
+        }
     </style>
 </head>
 <body>
@@ -71,7 +76,9 @@
 <main>
     <article>
         <h1>Videos/Shows To Watch</h1>
-        <div id="items"></div>
+        <div id = "theList" class = "list-group">
+          <div id="items" class = "list-group-item"></div>
+        </div>
         <section>
             <input type="text" id="new-item" placeholder="add item">
             <a href="#"><i class="fa fa-plus-circle fa-2x" id="new"></i></a>
@@ -82,7 +89,7 @@
 <script>
 
     var CurrentItems = [];
-    var items = document.querySelector("#items");
+    var items = document.querySelector("#theList");
     var newItem = document.querySelector('#new-item');
     var article = document.querySelector('article');
 
@@ -114,6 +121,7 @@
             section.appendChild(h2);
             a.appendChild(icon);
             section.appendChild(a);
+            items.setAttribute("class", "list-group-item");
             items.appendChild(section);
         }
     }
@@ -140,7 +148,7 @@
             };
         }
     }, false);
-    // delete item from items
+
     (function () {
         items.addEventListener("click", function (evt) {
             var id = evt.target.id;
@@ -155,6 +163,14 @@
         }, false);
     })();
 </script>
-
+<script src = "http://rubaxa.github.io/Sortable/Sortable.js"></script>
+<script>
+  Sortable.create(theList, {
+  });
+  Sortable.create(listWithHandle, {
+    handle : '.glyphicon-move',
+    animation: 150
+  });
+</script>
 </body>
 </html>
